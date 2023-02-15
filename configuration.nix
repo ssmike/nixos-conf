@@ -100,6 +100,7 @@
       tdesktop
       ktorrent
       libsForQt5.kasts
+      libsForQt5.kalendar
     ];
   };
 
