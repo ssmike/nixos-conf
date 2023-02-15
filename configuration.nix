@@ -98,6 +98,8 @@
       git
       kmail
       telegram-desktop
+      ktorrent
+      kasts
     ];
     services.gpg-agent = {
       enable = true;
