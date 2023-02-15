@@ -91,8 +91,9 @@
     isNormalUser = true;
     description = "Михаил";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-      firefox
+      (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
       kate
       alacritty
       neovim
@@ -104,11 +105,12 @@
       pinentry
       passff-host
       pass-nodmenu
-
-      libsForQt5.kasts
-      libsForQt5.kalendar
-      libsForQt5.kleopatra
-    ];
+    ] ++  (with pkgs.libsForQt5; [
+      kasts
+      kalendar
+      kleopatra
+      spectacle
+    ]);
   };
 
   # Enable automatic login for the user.
@@ -137,6 +139,7 @@
   };
   services.pcscd.enable = true;
 
+  environment.shells = with pkgs; [ zsh bash ];
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
