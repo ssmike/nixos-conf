@@ -27,7 +27,7 @@
       inherit pkgs;
       modules = [
         ./michael.nix
-      ]
+      ];
     };
   };
 }
