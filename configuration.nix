@@ -97,15 +97,10 @@
       openssh
       git
       kmail
-      telegram-desktop
+      tdesktop
       ktorrent
-      kasts
+      libsForQt5.kasts
     ];
-    services.gpg-agent = {
-      enable = true;
-      defaultCacheTtl = 1800;
-      enableSshSupport = true;
-    };
   };
 
   # Enable automatic login for the user.
