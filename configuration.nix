@@ -92,8 +92,18 @@
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
+      alacritty
+      neovim
+      openssh
+      git
+      kmail
+      telegram-desktop
     ];
+    services.gpg-agent = {
+      enable = true;
+      defaultCacheTtl = 1800;
+      enableSshSupport = true;
+    };
   };
 
   # Enable automatic login for the user.

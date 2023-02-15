@@ -1,14 +1,10 @@
 {
   inputs = {
     nixpkgs.url = github:NixOs/nixpkgs;
-    home-manager = {
-       url = github:nix-community/home-manager;
-    };
   };
 
   outputs = {
     nixpkgs,
-    home-manager,
     ...
   }:
   let
@@ -22,12 +18,6 @@
        ssmike-thinkpad = lib.nixosSystem {
           modules = [ ./configuration.nix  ];
        };
-    };
-    homeConfigurations.michael = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        ./michael.nix
-      ];
     };
   };
 }
