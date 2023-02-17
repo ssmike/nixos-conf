@@ -104,7 +104,7 @@
       ktorrent
       pinentry
       passff-host
-      pass-nodmenu
+      (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
