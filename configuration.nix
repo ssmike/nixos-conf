@@ -110,6 +110,7 @@
       kalendar
       kleopatra
       spectacle
+      kdeconnect-kde
     ]);
   };
 
