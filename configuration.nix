@@ -145,8 +145,8 @@
          config = '' config /root/nixos/openvpn/yandexVPN.conf '';
          autoStart = false;
          updateResolvConf = true;
-     }
-  }
+     };
+  };
   
   environment.shells = with pkgs; [ zsh bash ];
   # List services that you want to enable:
