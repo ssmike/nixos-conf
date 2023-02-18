@@ -111,6 +111,7 @@
       kleopatra
       spectacle
       kdeconnect-kde
+      konqueror
     ]);
   };
 
