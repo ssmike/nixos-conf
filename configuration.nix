@@ -57,6 +57,8 @@
     enable = true;
     excludePackages = with pkgs.libsForQt5; [kwrited];
   };
+
+  hardware.bluetooth.enable = true;
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -143,7 +145,7 @@
   
   services.openvpn.servers = {
      yandex = {
-         config = '' config /root/nixos/openvpn/yandexVPN.conf '';
+         config = '' config /etc/openvpn/client/yandex.conf '';
          autoStart = false;
          updateResolvConf = true;
      };
