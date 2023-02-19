@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -14,6 +13,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  nixpkgs.config.packageOverrides =  super: let self = super.pkgs; in {
+     openvpn = super.openvpn.override {
+        openssl = super.openssl_legacy;
+     };
+  };
 
   # Setup keyfile
   boot.initrd.secrets = {
@@ -52,6 +57,7 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.defaultSession = "plasmawayland";
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5 = {
     enable = true;
@@ -107,6 +113,7 @@
       pinentry
       passff-host
       (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
+      networkmanager-openvpn
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
@@ -135,6 +142,9 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+
+  programs.nix-ld.enable = true;
+
   programs.dconf.enable = true;
   programs.gnupg.agent = {
      enable = true;
