@@ -18,6 +18,7 @@
      openvpn = super.openvpn.override {
         openssl = super.openssl_legacy;
      };
+     allowUnfree = true;
   };
 
   # Setup keyfile
@@ -114,6 +115,9 @@
       passff-host
       (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
       networkmanager-openvpn
+
+      steam
+      zoom-us
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
