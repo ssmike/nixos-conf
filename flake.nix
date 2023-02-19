@@ -15,11 +15,13 @@
       cpp = let
               llvm = pkgs.llvmPackages_14;
             in
-            [
-              pkgs.glibc
-              pkgs.clang-tools
+            with pkgs; [
+              clang-tools
               llvm.clang
               llvm.libcxxabi
+              cmake
+              gnumake
+              protobuf
             ];
     };
     devShell = deps: with pkgs; stdenv.mkDerivation

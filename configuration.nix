@@ -125,8 +125,7 @@
       spectacle
       kdeconnect-kde
       konqueror
-    ]) ++
-    envs.cpp;
+    ]);
   };
 
   # Enable automatic login for the user.
