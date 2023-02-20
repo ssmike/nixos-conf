@@ -115,7 +115,8 @@
       passff-host
       (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
       networkmanager-openvpn
-
+      ccid
+      vlc
       steam
       zoom-us
     ] ++  (with pkgs.libsForQt5; [
