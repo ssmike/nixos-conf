@@ -11,7 +11,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    envs = {
+    envs = rec {
       cpp = let
               llvm = pkgs.llvmPackages_14;
             in
@@ -23,6 +23,7 @@
               gnumake
               protobuf
             ];
+      arcadia = [pkgs.glibc] ++ envs.cpp;
     };
     devShell = deps: with pkgs; stdenv.mkDerivation
           {
@@ -45,5 +46,6 @@
        };
     };
     devShells.cpp = devShell envs.cpp;
+    devShells.arcadia = devShell envs.arcadia;
   };
 }
