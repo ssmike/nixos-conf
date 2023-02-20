@@ -152,7 +152,10 @@
   # started in user sessions.
   # programs.mtr.enable = true;
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+     enable = true;
+     libraries = pkgs.lib.mkOptionDefault [ pkgs.libxcrypt ];
+  };
 
   programs.dconf.enable = true;
   programs.gnupg.agent = {
