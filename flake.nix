@@ -26,7 +26,7 @@
     };
     devShell = deps: with pkgs; stdenv.mkDerivation
           {
-           name = "cpp env";
+           name = "dev-env";
            phases = [ "installPhase" ];
            installPhase = ''
               mkdir -p $out
