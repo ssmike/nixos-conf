@@ -18,9 +18,11 @@
      openvpn = super.openvpn.override {
         openssl = super.openssl_legacy;
      };
-     akonadi = super.akonadi.override {
-        mysqlSupport = false;
-        postgresSupport = true;
+     libsForQt5 = super.libsForQt5 // {
+        akonadi = super.akonadi.override {
+            mysqlSupport = false;
+            postgresSupport = true;
+        };
      };
      allowUnfree = true;
   };
@@ -107,19 +109,19 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
-      kate
       alacritty
       neovim
       openssh
       git
-      kmail
       tdesktop
-      ktorrent
       pinentry
       passff-host
       (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
       networkmanager-openvpn
       ccid
+      kate
+      kmail
+      ktorrent
       vlc
       steam
       zoom-us
