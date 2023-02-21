@@ -18,12 +18,9 @@
      openvpn = super.openvpn.override {
         openssl = super.openssl_legacy;
      };
-     libsForQt5 = super.libsForQt5 // {
-        akonadi = super.akonadi.override {
-            mysqlSupport = false;
-            postgresSupport = true;
-        };
-     };
+
+     mysqlSupport = false;
+     postgresSupport = true;
      allowUnfree = true;
   };
 
