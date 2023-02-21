@@ -103,7 +103,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Михаил";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
