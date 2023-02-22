@@ -71,8 +71,9 @@
   hardware.bluetooth.enable = true;
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    layout = "us,ru";
+    xkbVariant="altgr-intl,";
+    xkbOptions = "grp:caps_toggle";
   };
 
   # Enable CUPS to print documents.
