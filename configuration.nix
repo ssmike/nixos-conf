@@ -73,7 +73,7 @@
   services.xserver = {
     layout = "us,ru";
     xkbVariant="altgr-intl,";
-    xkbOptions = "grp:caps_toggle";
+    xkbOptions = "grp:caps_toggle,lv3:switch,grp_led:caps";
   };
 
   # Enable CUPS to print documents.
