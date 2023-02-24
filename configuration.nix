@@ -132,6 +132,7 @@
       konqueror
       kdepim-addons
       filelight
+      kaccounts-providers
     ]);
   };
 
