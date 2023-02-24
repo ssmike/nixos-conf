@@ -137,9 +137,6 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "michael";
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -168,7 +165,7 @@
   services.openvpn.servers = {
      yandex = {
          config = '' config /etc/openvpn/client/yandex.conf '';
-         autoStart = false;
+         autoStart = true;
          updateResolvConf = true;
      };
   };
