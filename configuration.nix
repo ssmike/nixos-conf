@@ -122,6 +122,7 @@
       vlc
       steam
       zoom-us
+      libreoffice-qt
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
