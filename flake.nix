@@ -12,6 +12,14 @@
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
     envs = rec {
+      common = with pkgs; [
+        ripgrep
+        jq
+        nmap
+        lsof
+        netcat
+        gdb
+      ];
       cpp = let
               llvm = pkgs.llvmPackages_14;
             in
@@ -22,7 +30,8 @@
               cmake
               gnumake
               protobuf
-            ];
+            ]
+            ++ common;
       arcadia = [pkgs.glibc] ++ envs.cpp;
     };
     devShell = deps: with pkgs; stdenv.mkDerivation
