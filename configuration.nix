@@ -133,6 +133,7 @@
       kdepim-addons
       filelight
       kaccounts-providers
+      korganizer
     ]);
   };
 
