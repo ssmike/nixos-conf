@@ -130,6 +130,8 @@
       spectacle
       kdeconnect-kde
       konqueror
+      kdepim-addons
+      filelight
     ]);
   };
 
