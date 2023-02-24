@@ -21,7 +21,6 @@
 
      mysqlSupport = false;
      postgresSupport = true;
-     allowUnfree = true;
   };
 
   # Setup keyfile
@@ -136,6 +135,9 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "michael";
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
