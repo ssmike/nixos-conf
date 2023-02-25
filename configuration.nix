@@ -134,6 +134,7 @@
       filelight
       kaccounts-providers
       korganizer
+      ark
     ]);
   };
 
