@@ -34,7 +34,7 @@
               protobuf
             ]
             ++ dev_common;
-      arcadia = [pkgs.glibc] ++ envs.cpp;
+      arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
     devShell = deps: with pkgs; stdenv.mkDerivation
           {
