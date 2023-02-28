@@ -102,7 +102,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Михаил";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
@@ -135,6 +135,7 @@
       kaccounts-providers
       korganizer
       ark
+      discover
     ]);
   };
 
@@ -183,6 +184,15 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  virtualisation.docker = {
+     enable = true;
+     rootless = {
+        enable = true;
+        setSocketVariable = true;
+    };
+  };
+
+  services.flatpak.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
