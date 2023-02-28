@@ -135,7 +135,6 @@
       kaccounts-providers
       korganizer
       ark
-      discover
     ]);
   };
 
