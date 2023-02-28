@@ -135,7 +135,7 @@
       kaccounts-providers
       korganizer
       ark
-    ]);
+    ]) ++ envs.dev_common;
   };
 
   # Enable automatic login for the user.
