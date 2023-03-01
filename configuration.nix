@@ -120,9 +120,9 @@
       kmail
       ktorrent
       vlc
-      steam
       zoom-us
       libreoffice-qt
+      wine wineWowPackages.stable
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
@@ -137,6 +137,9 @@
       ark
     ]) ++ envs.dev_common;
   };
+
+  programs.steam.enable = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
