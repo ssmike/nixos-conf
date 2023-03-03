@@ -136,7 +136,6 @@
       korganizer
       ark
     ])
-    ++ envs.cpp
     ++ envs.py;
   };
 

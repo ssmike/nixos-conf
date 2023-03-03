@@ -41,15 +41,7 @@
       ] ++ dev_common;
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
-    devShell = deps: with pkgs; stdenv.mkDerivation
-          {
-           name = "dev-env";
-           phases = [ "installPhase" ];
-           installPhase = ''
-              mkdir -p $out
-             '';
-           propagatedBuildInputs = deps;
-          };
+    devShell = deps: pkgs.mkShell {packages = deps;};
   in
   { # Removes all phases except installPhase
     nixosConfigurations = {
@@ -61,8 +53,10 @@
           modules = [ ./configuration.nix  ];
        };
     };
-    devShells.cpp = devShell envs.cpp;
-    devShells.arcadia = devShell envs.arcadia;
-    devShells.python = devShell envs.py;
+    devShells.${system} = {
+      cpp = devShell envs.cpp;
+      arcadia = devShell envs.arcadia;
+      python = devShell envs.py;
+    };
   };
 }
