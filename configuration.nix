@@ -135,7 +135,9 @@
       kaccounts-providers
       korganizer
       ark
-    ]) ++ envs.dev_common;
+    ])
+    ++ envs.cpp
+    ++ envs.py;
   };
 
   programs.steam.enable = true;

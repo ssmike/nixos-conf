@@ -34,6 +34,11 @@
               protobuf
             ]
             ++ dev_common;
+      py = with pkgs; [
+        (python3.withPackages (ps: with ps; [
+          python-lsp-server
+        ]))
+      ] ++ dev_common;
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
     devShell = deps: with pkgs; stdenv.mkDerivation
@@ -58,5 +63,6 @@
     };
     devShells.cpp = devShell envs.cpp;
     devShells.arcadia = devShell envs.arcadia;
+    devShells.python = devShell envs.py;
   };
 }
