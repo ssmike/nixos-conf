@@ -135,8 +135,8 @@
       kaccounts-providers
       korganizer
       ark
-    ])
-    ++ envs.py;
+      amarok
+    ]);
   };
 
   programs.steam.enable = true;
