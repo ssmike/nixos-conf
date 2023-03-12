@@ -136,7 +136,7 @@
       korganizer
       ark
       amarok
-    ]);
+    ]) ++ envs.dev_common;
   };
 
   programs.steam.enable = true;
