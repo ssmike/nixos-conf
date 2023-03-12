@@ -181,6 +181,12 @@
          updateResolvConf = true;
      };
   };
+
+  systemd.extraConfig = ''
+    RebootWatchdogSec=20s
+    ShutdownWatchdogSec=20s
+  '';
+
   
   environment.shells = with pkgs; [ zsh bash ];
   # List services that you want to enable:
