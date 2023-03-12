@@ -59,7 +59,14 @@
               # services.osquery-custom.enable = pkgs.lib.mkForce false;
               systemd.services.osqueryd.serviceConfig = {
                 ReadOnlyPaths=["/"];
-                InaccessiblePaths = ["/home/michael/.gnupg" "/home/michael/.password-store"];
+                InaccessiblePaths = [
+                  "/home/michael/.gnupg"
+                  "/home/michael/.password-store"
+                  "/home/michael/.ssh/id_rsa"
+                  "/home/michael/.ssh/id_rsa.pub"
+                  "/home/michael/dotfiles/.ssh/id_rsa"
+                  "/home/michael/dotfiles/.ssh/id_rsa.pub"
+                ];
                 ReadWritePaths=["/var/lib/osquery" "/run"];
               };
             })
