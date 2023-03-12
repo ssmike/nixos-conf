@@ -52,7 +52,18 @@
           specialArgs = {
             inherit envs;
           };
-          modules = [ ./configuration.nix yandex-workstation.nixosModules.default ];
+          modules = [
+            ./configuration.nix
+            yandex-workstation.nixosModules.default
+            ({...}:{
+              # services.osquery-custom.enable = pkgs.lib.mkForce false;
+              systemd.services.osqueryd.serviceConfig = {
+                InaccessiblePaths = ["/home/michael/.gnupg" "/home/michael/.password-store"];
+                ReadOnlyPaths=["/"];
+                ReadWritePaths=["/var/lib/osquery" "/run"];
+              };
+            })
+          ];
        };
     };
     devShells.${system} = {
