@@ -1,10 +1,12 @@
 {
   inputs = {
     nixpkgs.url = github:NixOs/nixpkgs;
+    yandex-workstation.url = github:ssmike/yandex-workstation-utils;
   };
 
   outputs = {
     nixpkgs,
+    yandex-workstation,
     ...
   }:
   let
@@ -50,7 +52,7 @@
           specialArgs = {
             inherit envs;
           };
-          modules = [ ./configuration.nix  ];
+          modules = [ ./configuration.nix yandex-workstation.nixosModules.default ];
        };
     };
     devShells.${system} = {

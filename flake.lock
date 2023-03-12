@@ -15,9 +15,44 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1678426640,
+        "narHash": "sha256-3Q4KN0XAXQT7YE3A8n3LzLtRNUCo0U++W3gl+5NhKHs=",
+        "owner": "NixOs",
+        "repo": "nixpkgs",
+        "rev": "824f886682fc893e6dbf27114e5001ebf2770ea1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOs",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "yandex-workstation": "yandex-workstation"
+      }
+    },
+    "yandex-workstation": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1678583511,
+        "narHash": "sha256-aa1VE1HRWQo8xEdqkQOYX68+Ax4h15sC7hbHVawToyw=",
+        "owner": "ssmike",
+        "repo": "yandex-workstation-utils",
+        "rev": "44e2327fddef6ca3617247aa0eb2e31bfec2b84e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ssmike",
+        "repo": "yandex-workstation-utils",
+        "type": "github"
       }
     }
   },
