@@ -60,7 +60,7 @@
               systemd.services.osqueryd.serviceConfig = {
                 ReadOnlyPaths=["/"];
                 InaccessiblePaths = ["/home/michael/.gnupg" "/home/michael/.password-store"];
-                ReadWritePaths=["/var/lib/osquery" "/run/osquery"];
+                ReadWritePaths=["/var/lib/osquery" "/run"];
               };
             })
           ];
