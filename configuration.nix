@@ -123,6 +123,7 @@
       zoom-us
       libreoffice-qt
       wine wineWowPackages.stable
+      clementine
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
@@ -135,7 +136,6 @@
       kaccounts-providers
       korganizer
       ark
-      amarok
     ]) ++ envs.dev_common;
   };
 
