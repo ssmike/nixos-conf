@@ -130,7 +130,6 @@
       kleopatra
       spectacle
       kdeconnect-kde
-      konqueror
       kdepim-addons
       filelight
       kaccounts-providers

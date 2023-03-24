@@ -39,6 +39,7 @@
       py = with pkgs; [
         (python3.withPackages (ps: with ps; [
           python-lsp-server
+          virtualenv
         ]))
       ] ++ dev_common;
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
