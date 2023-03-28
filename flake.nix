@@ -74,6 +74,9 @@
           ];
        };
     };
+    packages.${system} = pkgs // {
+      qtwebengine = pkgs.libsForQt5.qtwebengine;
+    };
     devShells.${system} = {
       cpp = devShell envs.cpp;
       arcadia = devShell envs.arcadia;

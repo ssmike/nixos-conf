@@ -19,8 +19,10 @@
         openssl = super.openssl_legacy;
      };
 
-     mysqlSupport = false;
+     # For akonadi with posgres as default
+     #mysqlSupport = false;
      postgresSupport = true;
+     defaultDriver = "POSTGRES";
   };
 
   # Setup keyfile
@@ -64,8 +66,9 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5 = {
     enable = true;
-    excludePackages = with pkgs.libsForQt5; [kwrited];
   };
+
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [kwrited];
 
   hardware.bluetooth.enable = true;
   # Configure keymap in X11
@@ -159,6 +162,8 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+
+  programs.zsh.enable = true;
 
   programs.nix-ld = {
      enable = true;
