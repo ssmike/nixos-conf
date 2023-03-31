@@ -23,6 +23,9 @@
         gdb
         ctags
         mosh
+        dnsutils
+        htop
+        git
       ];
       cpp = let
               llvm = pkgs.llvmPackages_14;

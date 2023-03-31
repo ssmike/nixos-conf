@@ -44,7 +44,8 @@
   time.timeZone = "America/Argentina/Buenos_Aires";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  #i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "es_AR.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_AR.UTF-8";
@@ -110,9 +111,8 @@
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
       alacritty
-      neovim
+      neovim neovim-qt
       openssh
-      git
       tdesktop
       pinentry
       passff-host
