@@ -128,6 +128,7 @@
       libreoffice-qt
       wine wineWowPackages.stable
       clementine
+      peruse
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
