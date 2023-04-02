@@ -112,7 +112,7 @@
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
       alacritty
-      neovim neovim-qt
+      neovim neovim-qt meld
       openssh
       tdesktop
       pinentry
@@ -139,6 +139,13 @@
       kaccounts-providers
       korganizer
       ark
+      akregator
+      konversation
+      neochat
+      krdc
+      kid3
+      kamoso
+      ksystemlog
     ]) ++ envs.dev_common;
   };
 
