@@ -58,6 +58,7 @@
     LC_TELEPHONE = "es_AR.UTF-8";
     LC_TIME = "es_AR.UTF-8";
   };
+  i18n.supportedLocales = ["all"];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -167,7 +168,7 @@
 
   programs.nix-ld = {
      enable = true;
-     libraries = pkgs.lib.mkOptionDefault [ pkgs.libxcrypt ];
+     libraries = [ pkgs.libxcrypt ];
   };
 
   programs.dconf.enable = true;
