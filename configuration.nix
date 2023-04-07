@@ -176,7 +176,7 @@
 
   programs.nix-ld = {
      enable = true;
-     libraries = [ pkgs.libxcrypt ];
+     libraries = [ pkgs.libxcrypt pkgs.libxcrypt-legacy ];
   };
 
   programs.dconf.enable = true;
