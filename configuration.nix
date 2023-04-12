@@ -153,6 +153,8 @@
   programs.steam.enable = true;
   hardware.opengl.driSupport32Bit = true;
 
+  programs.kdeconnect.enable = true;
+
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "michael";
