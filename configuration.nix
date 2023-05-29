@@ -14,6 +14,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  boot.kernelModules = ["v4l2loopback"];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+
   nixpkgs.config.packageOverrides =  super: let self = super.pkgs; in {
      openvpn = super.openvpn.override {
         openssl = super.openssl_legacy;
@@ -129,6 +132,7 @@
       wine wineWowPackages.stable
       clementine
       peruse
+      droidcam
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
