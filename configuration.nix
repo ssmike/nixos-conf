@@ -17,6 +17,8 @@
   boot.kernelModules = ["v4l2loopback"];
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
 
+  # security.pki.certificateFiles = [ /home/michael/Descargas/YandexInternalRootCA.crt ];
+
   nixpkgs.config.packageOverrides =  super: let self = super.pkgs; in {
      openvpn = super.openvpn.override {
         openssl = super.openssl_legacy;
