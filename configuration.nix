@@ -135,6 +135,7 @@
       clementine
       peruse
       droidcam
+      obs-studio
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar

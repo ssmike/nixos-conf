@@ -45,6 +45,9 @@
           virtualenv
         ]))
       ] ++ dev_common;
+      go = with pkgs; [
+        go
+      ] ++ dev_common;
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
     devShell = deps: pkgs.mkShell {packages = deps;};
