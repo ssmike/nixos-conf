@@ -1,5 +1,6 @@
 {
   inputs = {
+    home-manager.url = github:nix-community/home-manager;
     nixpkgs.url = github:NixOs/nixpkgs;
     yandex-workstation.url = github:ssmike/yandex-workstation-utils;
   };
@@ -7,6 +8,7 @@
   outputs = {
     nixpkgs,
     yandex-workstation,
+    home-manager,
     ...
   }:
   let
@@ -61,6 +63,7 @@
           };
           modules = [
             ./configuration.nix
+
             yandex-workstation.nixosModules.default
             ({...}:{
               # services.osquery-custom.enable = pkgs.lib.mkForce false;
@@ -77,6 +80,13 @@
                 ReadWritePaths=["/var/lib/osquery" "/run"];
               };
             })
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.michael = import ./michael.nix;
+            }
           ];
        };
     };
