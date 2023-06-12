@@ -50,6 +50,10 @@
       go = with pkgs; [
         go
       ] ++ dev_common;
+      hs = with pkgs; [
+        (haskellPackages.ghcWithPackages (pkgs: [ pkgs.random pkgs.randomgen pkgs.parallel ]))
+        haskell-language-server
+      ];
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
     devShell = deps: pkgs.mkShell {packages = deps;};
@@ -97,6 +101,7 @@
       cpp = devShell envs.cpp;
       arcadia = devShell envs.arcadia;
       python = devShell envs.py;
+      haskell = devShell envs.hs;
     };
   };
 }
