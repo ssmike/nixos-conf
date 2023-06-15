@@ -24,6 +24,10 @@
         openssl = super.openssl_legacy;
      };
 
+     neovim = super.neovim.override {
+       withPython3 = true;
+     };
+
      # For akonadi with posgres as default
      #mysqlSupport = false;
      postgresSupport = true;
