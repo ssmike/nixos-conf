@@ -84,6 +84,8 @@
                 ];
                 ReadWritePaths=["/var/lib/osquery" "/run"];
               };
+
+              security.tpm2.enable = pkgs.lib.mkForce false;
             })
 
             home-manager.nixosModules.home-manager
