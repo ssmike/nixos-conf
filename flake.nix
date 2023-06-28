@@ -66,9 +66,10 @@
             inherit envs;
           };
           modules = [
+            yandex-workstation.nixosModules.default
+
             ./configuration.nix
 
-            yandex-workstation.nixosModules.default
             ({...}:{
               # services.osquery-custom.enable = pkgs.lib.mkForce false;
               systemd.services.osqueryd.serviceConfig = {
