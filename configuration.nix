@@ -116,7 +116,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Михаил";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" "tss"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
@@ -140,6 +140,7 @@
       peruse
       droidcam
       obs-studio
+      telegram-desktop
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
