@@ -77,11 +77,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1690116022,
-        "narHash": "sha256-d3BYgSUo6lVG6mAL3rczSZgcecCc3gSbmNpM3dpe+Bw=",
+        "lastModified": 1693652720,
+        "narHash": "sha256-ZTJpJG1CuXCBXM8jLnThXLcs7T/oBcNidC+QyJEkDSo=",
         "owner": "ssmike",
         "repo": "yandex-workstation-utils",
-        "rev": "f18a0a46d698acdc96633622ab8d057ce6b016e7",
+        "rev": "425c11e39ef0c08d1a3cb9a4084bbf03b4cc438b",
         "type": "github"
       },
       "original": {

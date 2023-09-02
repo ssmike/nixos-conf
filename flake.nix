@@ -49,6 +49,7 @@
       ] ++ dev_common;
       go = with pkgs; [
         go
+        gopls
       ] ++ dev_common;
       hs = with pkgs; [
         (haskellPackages.ghcWithPackages (pkgs: [ pkgs.random pkgs.randomgen pkgs.parallel ]))

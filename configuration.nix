@@ -20,9 +20,6 @@
   # security.pki.certificateFiles = [ /home/michael/Descargas/YandexInternalRootCA.crt ];
 
   nixpkgs.config.packageOverrides =  super: let self = super.pkgs; in {
-     openvpn = super.openvpn.override {
-        openssl = super.openssl_legacy;
-     };
 
      neovim = super.neovim.override {
        withPython3 = true;
