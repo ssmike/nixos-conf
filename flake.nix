@@ -47,7 +47,7 @@
           virtualenv
         ]))
       ] ++ dev_common;
-      go = with pkgs; [
+      golang = with pkgs; [
         go
         gopls
       ] ++ dev_common;
@@ -104,6 +104,7 @@
       arcadia = devShell envs.arcadia;
       python = devShell envs.py;
       haskell = devShell envs.hs;
+      golang = devShell envs.golang;
     };
   };
 }
