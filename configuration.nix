@@ -156,6 +156,7 @@
       kid3
       kamoso
       ksystemlog
+      ghostwriter
     ]) ++ envs.dev_common;
   };
 
