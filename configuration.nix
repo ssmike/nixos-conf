@@ -157,6 +157,7 @@
       kamoso
       ksystemlog
       ghostwriter
+      konqueror
     ]) ++ envs.dev_common;
   };
 
