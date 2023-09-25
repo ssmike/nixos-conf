@@ -156,7 +156,7 @@
       kamoso
       ksystemlog
       ghostwriter
-    ]) ++ envs.dev_common;
+    ]);
   };
 
   programs.steam.enable = true;
@@ -176,7 +176,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  ];
+  ] ++ envs.dev_common;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
