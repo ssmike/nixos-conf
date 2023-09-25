@@ -136,7 +136,6 @@
       clementine
       peruse
       droidcam
-      obs-studio
       telegram-desktop
     ] ++  (with pkgs.libsForQt5; [
       kasts
@@ -157,7 +156,6 @@
       kamoso
       ksystemlog
       ghostwriter
-      konqueror
     ]) ++ envs.dev_common;
   };
 
