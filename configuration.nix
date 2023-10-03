@@ -137,6 +137,7 @@
       peruse
       droidcam
       telegram-desktop
+      discord
     ] ++  (with pkgs.libsForQt5; [
       kasts
       kalendar
