@@ -55,6 +55,11 @@
         (haskellPackages.ghcWithPackages (pkgs: [ pkgs.random pkgs.randomgen pkgs.parallel ]))
         haskell-language-server
       ];
+      clj = with pkgs; [
+        clojure
+        clojure-lsp
+        leiningen
+      ];
       arcadia = (with pkgs; [glibc python3]) ++ envs.cpp;
     };
     devShell = deps: pkgs.mkShell {packages = deps;};
@@ -105,6 +110,7 @@
       python = devShell envs.py;
       haskell = devShell envs.hs;
       golang = devShell envs.golang;
+      clojure = devShell envs.clj;
     };
   };
 }
