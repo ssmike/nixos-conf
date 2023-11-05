@@ -115,15 +115,17 @@
     description = "Михаил";
     extraGroups = [ "networkmanager" "wheel" "video" "docker" "tss"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      (firefox.override {extraNativeMessagingHosts = [ passff-host ];})
+    packages = with pkgs;
+    let my-pass = (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]));
+    in [
+      (firefox.override {extraNativeMessagingHosts = [ (passff-host.override { pass = my-pass; }) ];})
+      my-pass
+
       alacritty
       neovim neovim-qt meld
       openssh
       tdesktop
       pinentry
-      passff-host
-      (pass-nodmenu.withExtensions (ext: with ext; [pass-otp pass-genphrase pass-import]))
       networkmanager-openvpn
       ccid
       kate
