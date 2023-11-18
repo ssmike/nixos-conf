@@ -19,6 +19,15 @@
 
   # security.pki.certificateFiles = [ /home/michael/Descargas/YandexInternalRootCA.crt ];
 
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
+
   nixpkgs.config.packageOverrides =  super: let self = super.pkgs; in {
 
      neovim = super.neovim.override {
@@ -66,10 +75,7 @@
   };
   i18n.supportedLocales = ["all"];
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
   # services.xserver.displayManager.defaultSession = "plasmawayland";
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5 = {
