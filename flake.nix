@@ -2,11 +2,13 @@
   inputs = {
     nixpkgs.url = github:NixOs/nixpkgs;
     yandex-workstation.url = github:ssmike/yandex-workstation-utils;
+    dotfiles.url = github:ssmike/dotfiles/carbon;
   };
 
   outputs = {
     nixpkgs,
     yandex-workstation,
+    dotfiles,
     ...
   }:
   let
@@ -73,6 +75,8 @@
             yandex-workstation.nixosModules.default
 
             ./configuration.nix
+
+            ({...}:{ users.users.michael.packages = [dotfiles.packages.${system}.actualize-dotfiles]; })
 
             ({...}:{
               # services.osquery-custom.enable = pkgs.lib.mkForce false;
