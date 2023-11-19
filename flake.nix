@@ -76,7 +76,12 @@
 
             ./configuration.nix
 
-            ({...}:{ users.users.michael.packages = [dotfiles.packages.${system}.actualize-dotfiles]; })
+            ({...}:{
+              users.users.michael.packages = 
+              with dotfiles.packages.${system}; [
+                dotfiles-scripts
+              ];
+            })
 
             ({...}:{
               # services.osquery-custom.enable = pkgs.lib.mkForce false;

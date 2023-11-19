@@ -9,11 +9,11 @@
         "zsh-syntax-highlighting": "zsh-syntax-highlighting"
       },
       "locked": {
-        "lastModified": 1700347434,
-        "narHash": "sha256-q8iGKwK/92vkLXZ7uKnZ+2IwmOHoS+7EPoq2+xCKjqY=",
+        "lastModified": 1700400287,
+        "narHash": "sha256-N9+LoDEMzOPjQDqHMoTnAKoMQx0vFdbU8V826J2iTfY=",
         "owner": "ssmike",
         "repo": "dotfiles",
-        "rev": "6bed75bce846110bc9400341ffeb0c7c11e89c05",
+        "rev": "627b9e3e803e4c0a7b31f07d204d85f771fbd967",
         "type": "github"
       },
       "original": {
