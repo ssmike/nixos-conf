@@ -1,8 +1,11 @@
 {
   inputs = {
-    nixpkgs.url = github:NixOs/nixpkgs;
-    yandex-workstation.url = github:ssmike/yandex-workstation-utils;
-    dotfiles.url = github:ssmike/dotfiles/carbon;
+    nixpkgs.url = "github:NixOs/nixpkgs";
+    yandex-workstation = {
+      url = "github:ssmike/yandex-workstation-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dotfiles.url = "github:ssmike/dotfiles/carbon";
   };
 
   outputs = {
@@ -92,8 +95,6 @@
                   "/home/michael/.password-store"
                   "/home/michael/.ssh/id_rsa"
                   "/home/michael/.ssh/id_rsa.pub"
-                  "/home/michael/dotfiles/.ssh/id_rsa"
-                  "/home/michael/dotfiles/.ssh/id_rsa.pub"
                 ];
                 ReadWritePaths=["/var/lib/osquery" "/run"];
               };
