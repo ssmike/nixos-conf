@@ -128,7 +128,7 @@
       my-pass
 
       alacritty
-      neovim neovim-qt meld
+      neovim neovim-qt meld direnv
       openssh
       tdesktop
       pinentry
