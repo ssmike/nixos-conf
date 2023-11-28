@@ -67,7 +67,7 @@
     };
     devShell = deps: pkgs.mkShell {packages = deps;};
   in
-  { # Removes all phases except installPhase
+  {
     nixosConfigurations = {
        inherit system;
        ssmike-thinkpad = lib.nixosSystem {
@@ -87,7 +87,6 @@
             })
 
             ({...}:{
-              # services.osquery-custom.enable = pkgs.lib.mkForce false;
               systemd.services.osqueryd.serviceConfig = {
                 ReadOnlyPaths=["/"];
                 InaccessiblePaths = [
