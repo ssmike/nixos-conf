@@ -31,6 +31,8 @@
         dnsutils
         htop
         git
+        niv
+        nil
       ];
       cpp = let
               llvm = pkgs.llvmPackages_14;
