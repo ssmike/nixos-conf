@@ -141,7 +141,6 @@
       zoom-us
       libreoffice-qt
       wine wineWowPackages.stable
-      peruse
       droidcam
       telegram-desktop
       discord
