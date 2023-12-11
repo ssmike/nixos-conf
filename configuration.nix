@@ -163,6 +163,7 @@
       kamoso
       ksystemlog
       ghostwriter
+      knotes
     ]);
   };
 
