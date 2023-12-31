@@ -128,7 +128,7 @@
       my-pass
 
       alacritty
-      neovim neovim-qt kompare direnv
+      neovim neovim-qt kompare kdiff3 direnv
       openssh
       tdesktop
       pinentry
