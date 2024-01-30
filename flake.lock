@@ -116,11 +116,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1693654289,
-        "narHash": "sha256-6J9q6BezTDzPToyy+S75khAoNZYxzikrHftDdsjZBx4=",
+        "lastModified": 1706495266,
+        "narHash": "sha256-Uq/ccWFPXWYgJf5rQHUXHXHfRLQRpBz6coZBct00KLI=",
         "owner": "ssmike",
         "repo": "yandex-workstation-utils",
-        "rev": "d8e2168e3515b215ad297ebf22b8f6824578a67d",
+        "rev": "0e681007c3cfe2146b6e403cbc986bd1b0295899",
         "type": "github"
       },
       "original": {
