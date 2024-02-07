@@ -164,6 +164,7 @@
       ksystemlog
       ghostwriter
       knotes
+      zanshin
     ]);
   };
 
